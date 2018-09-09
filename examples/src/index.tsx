@@ -5,8 +5,9 @@ import { BrowserRouter, RouteComponentProps, Switch } from 'react-router-dom';
 import TypedReactRouter from 'typed-react-router-dom';
 import './style.less';
 
-// import { Link, Redirect, Route } from 'react-router-dom';
+// import { Link, Redirect, Route, withRouter } from 'react-router-dom';
 const { Link, Redirect, Route } = new TypedReactRouter<{
+    '/context-aware-say-hi/:name': { name: string }
     '/say-hi': {}
     '/say-hi/:name': { name: string }
     '/route-aware-say-hi/:name': { name: string}
@@ -57,13 +58,16 @@ ReactDOM.render(
             <Route exact path='/say-hi' component={() => <SayHi name="Nobody" />} />
 
             {/*-- Example: Passing path parameter to component without RouteComponentProps --*/}
-            <Route exact path='/say-hi/:name' component={(props: RouteComponentProps<SayHiProps>) => <SayHi {...props.match.params} />} />
+<Route exact path='/say-hi/:name' component={(props: RouteComponentProps<SayHiProps>) => <SayHi {...props.match.params} /> } />
 
             {/*-- Example: Injecting RouteComponentProps --*/}
             <Route exact path='/route-aware-say-hi/:name' component={RouteAwareSayHi} />
 
             {/*-- Example: Injecting RouteComponentProps --*/}
             <Route exact path='/route-aware-say-hi-with-props/:name' component={(props: RouteComponentProps<SayHiProps>) => <RouteAwareSayHiWithProps {...props} lastname="Spencer" />} />
+
+            {/*-- Example: Programmatically redirect by pushing to the browser history --*/}
+            {/*-- TODO: <Route exact path='/context-aware-say-hi/:name' component={withRouter(RouteAwareSayHi)} /> --*}
 
             {/*-- Home, contains all the links --*/}
             <Route exact path='/' component={() => (
@@ -74,7 +78,9 @@ ReactDOM.render(
                     <br/>
                     <Link to='/route-aware-say-hi/:name' params={{ name: 'Buddy' }}>Say hi to Buddy</Link>
                     <br/>
-                    <Link to='/route-aware-say-hi-with-props/:name' params={{ name: 'Buddy' }}>Say hi to Bud Spencer</Link>
+                    <Link to='/route-aware-say-hi-with-props/:name' params={{ name: 'Bud' }}>Say hi to Bud Spencer</Link>
+                    <br/>
+                    <Link to='/context-aware-say-hi/:name'>Context-aware say hi</Link>
                 </>
             )} />
 
