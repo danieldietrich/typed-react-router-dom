@@ -1,28 +1,35 @@
 import React from 'react';
 import {
-    Link as ReactLink,
-    LinkProps as ReactLinkProps,
-    Redirect as ReactRedirect,
-    RedirectProps as ReactRedirectProps,
-    Route as ReactRoute,
-    RouteComponentProps as ReactRouteComponentProps,
-    RouteProps as ReactRouteProps
+    Link as _Link,
+    LinkProps as _LinkProps,
+    Redirect as _Redirect,
+    RedirectProps as _RedirectProps,
+    Route as _Route,
+    RouteComponentProps as _RouteComponentProps,
+    RouteProps as _RouteProps
 } from "react-router-dom";
 
-export interface LinkProps<T, K extends keyof T & string, V extends T[K]> extends ReactLinkProps {
+export interface LinkProps<T, K extends keyof T & string, V extends T[K]> extends _LinkProps {
     to: K | LocationDescriptorObject<K>; // restricted
     params?: V; // added
     disabled?: boolean; // added
 }
 
-export interface RedirectProps<T, K1 extends keyof T & string, K2 extends keyof T & string, V1 extends T[K1]> extends ReactRedirectProps {
+export interface RedirectProps<T, K1 extends keyof T & string, K2 extends keyof T & string, V1 extends T[K1]> extends _RedirectProps {
     to: K1 | LocationDescriptorObject<K1>; // restricted
     from?: K2; // restricted
     params?: V1; // added
 }
 
-export interface RouteProps<T, K extends keyof T & string, V extends T[K]> extends ReactRouteProps {
-    component?: React.ComponentType<ReactRouteComponentProps<V>> | React.ComponentType<V>; // restricted
+/*
+  location?: H.Location;
+  component?: React.ComponentType<RouteComponentProps<any>> | React.ComponentType<any>;
+  render?: ((props: RouteComponentProps<any>) => React.ReactNode);
+  children?: ((props: RouteComponentProps<any>) => React.ReactNode) | React.ReactNode;
+  path?: string;
+ */
+export interface RouteProps<T, K extends keyof T & string, V extends T[K], P> extends _RouteProps {
+    component?: React.ComponentType<_RouteComponentProps<V>> | React.ComponentType<P>; // restricted
     path?: K; // restricted
 }
 
@@ -41,16 +48,16 @@ export default class TypedReactRouter<T> {
         if (props.disabled) {
             return <>{props.children}</>;
         } else {
-            return <ReactLink {...props} to={linkPath(props)} />;
+            return <_Link {...props} to={linkPath(props)} />;
         }
     }
 
     public Redirect<K1 extends keyof T & string, K2 extends keyof T & string, V1 extends T[K1]>(props: RedirectProps<T, K1, K2, V1>): JSX.Element {
-        return <ReactRedirect {...props} to={redirectPath(props)}/>;
+        return <_Redirect {...props} to={redirectPath(props)}/>;
     }
 
-    public Route<K extends keyof T & string, V extends T[K]>(props: RouteProps<T, K, V>): JSX.Element {
-        return <ReactRoute {...props} />;
+    public Route<K extends keyof T & string, V extends T[K], P>(props: RouteProps<T, K, V, P>): JSX.Element {
+        return <_Route {...props} />;
     }
 
 }
