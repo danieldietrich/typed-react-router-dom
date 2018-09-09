@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "description": "A type-safe react-router plugin for TypeScript.",
   "main": "index.js",
+  "types": "@types",
   "scripts": {
     "build": "rm -fr dist && npm run lint && webpack --mode production --env.production=true --progress --colors && cp package.json dist",
     "lint": "tslint --project tsconfig.json",
-    "test": "echo no tests, yet"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

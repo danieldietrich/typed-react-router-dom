@@ -1,0 +1,39 @@
+{
+  "name": "typed-react-router-dom-demo",
+  "version": "0.0.1",
+  "description": "Proof of concept for typed-react-router-dom",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "npm run lint && webpack-dev-server --mode development --progress --inline --colors",
+    "build": "rm -fr dist && npm run lint && webpack --mode production --progress --colors && cp -r public/* dist/",
+    "lint": "tslint --project tsconfig.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Dietrich",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/react": "^16.4.13",
+    "@types/react-dom": "^16.0.7",
+    "@types/react-router-dom": "^4.3.0",
+    "css-loader": "^1.0.0",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.4.2",
+    "style-loader": "^0.22.1",
+    "ts-loader": "^4.5.0",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.3",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.7"
+  },
+  "dependencies": {
+    "antd": "^3.8.4",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-loadable": "^5.5.0",
+    "react-router-dom": "^4.3.1",
+    "typed-react-router-dom": "../dist"
+  }
+}
