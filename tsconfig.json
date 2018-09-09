@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "alwaysStrict": true,
         "allowSyntheticDefaultImports": true,
         "declaration": true,
         "declarationDir": "dist/@types",
@@ -13,9 +14,11 @@
         "moduleResolution": "node",
         "noImplicitAny": true,
         "noImplicitReturns": true,
+        "noImplicitThis": true,
         "noUnusedLocals": true,
+        "noUnusedParameters": false,
         "removeComments": true,
-        "sourceMap": true,
+        "sourceMap": false,
         "strict": true,
         "target": "es6"
     },

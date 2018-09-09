@@ -1,0 +1,8 @@
+/.vscode
+/examples
+/lib
+.gitignore
+.package-lock.json
+tsconfig.json
+tslint.json
+webpack.config.js

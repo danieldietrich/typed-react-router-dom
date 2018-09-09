@@ -2,10 +2,11 @@
   "name": "typed-react-router-dom",
   "version": "0.1.0",
   "description": "A type-safe react-router plugin for TypeScript.",
-  "main": "index.js",
-  "types": "@types",
+  "main": "dist/index.js",
+  "types": "./dist/@types",
   "scripts": {
-    "build": "rm -fr dist && npm run lint && webpack --mode production --env.production=true --progress --colors && cp package.json dist",
+    "clean": "git clean -fdX",
+    "prepublishOnly": "clean && npm run lint && webpack --mode production --env.production=true --progress --colors",
     "lint": "tslint --project tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -32,7 +33,7 @@
     "webpack-cli": "^3.1.0"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
-    "react-router-dom": "^4.0.0"
+    "react": ">=15",
+    "react-router-dom": ">=4"
   }
 }

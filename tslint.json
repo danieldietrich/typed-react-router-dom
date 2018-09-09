@@ -4,6 +4,7 @@
         "arrow-parens": false,
         "eofline": false,
         "quotemark": false,
+        "interface-name": false,
         "max-line-length": false,
         "no-console": false,
         "no-submodule-imports": false,

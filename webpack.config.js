@@ -2,7 +2,7 @@ const path = require('path');
 const PeerDepsExternalsPlugin = require('peer-deps-externals-webpack-plugin');
 
 module.exports = {
-        entry: './lib/index.ts',
+        entry: './lib/index.tsx',
         output: {
             filename: 'index.js',
             path: path.resolve(__dirname, 'dist'),
