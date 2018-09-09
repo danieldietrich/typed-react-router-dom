@@ -7,7 +7,7 @@
   "types": "./dist/@types",
   "scripts": {
     "clean": "git clean -fdX",
-    "prepublishOnly": "npm run lint && webpack --mode production --progress --colors",
+    "prepublishOnly": "npm run clean && npm install && npm run lint && webpack --mode production --progress --colors",
     "publish": "echo \"Error: no publish allowed\" && exit 1",
     "lint": "tslint --project tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1"
