@@ -2,7 +2,7 @@
   "name": "typed-react-router-dom-demo",
   "version": "0.0.1",
   "description": "Proof of concept for typed-react-router-dom",
-  "main": "index.js",
+  "main": "",
   "private": true,
   "scripts": {
     "start": "npm run lint && webpack-dev-server --mode development --progress --inline --colors",
@@ -34,6 +34,6 @@
     "react-dom": "^16.4.2",
     "react-loadable": "^5.5.0",
     "react-router-dom": "^4.3.1",
-    "typed-react-router-dom": "../dist"
+    "typed-react-router-dom": "file:.."
   }
 }

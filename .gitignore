@@ -1,4 +1,6 @@
+# we don't ingnore /lib but /dist !
 /.vscode
 /dist
 /node_modules
 .DS_Store
+*.tgz

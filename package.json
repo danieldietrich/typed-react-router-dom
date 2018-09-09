@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "description": "A type-safe react-router plugin for TypeScript.",
   "main": "dist/index.js",
+  "private": true,
   "types": "./dist/@types",
   "scripts": {
     "clean": "git clean -fdX",
-    "prepublishOnly": "clean && npm run lint && webpack --mode production --env.production=true --progress --colors",
+    "prepublishOnly": "npm run lint && webpack --mode production --progress --colors",
+    "publish": "echo \"Error: no publish allowed\" && exit 1",
     "lint": "tslint --project tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

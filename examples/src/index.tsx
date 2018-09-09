@@ -20,12 +20,12 @@ ReactDOM.render(
                 console.log("/sayhi/", props);
                 return <div>Hi {props.name}</div>;
             }} />
-            <Route path='/login/:name' component={(props: RouteComponentProps<{ name: string }>) => <div>Hi {props.match.params.name}</div>} />
+            <Route path='/login/:name' component={(props: RouteComponentProps<{ name: string }>) => <div>Hi {props.match.params.name}!</div>} />
             <Route exact path='/' component={() => (
                 <>
-                    <Link to='/sayhi/Terence'>say hi</Link>
+                    <Link to='/sayhi/Nobody'>say hi</Link>
                     <br/>
-                    <Link to='/login/Bud'>login</Link>
+                    <Link to='/login/Buddy'>login</Link>
                 </>
             )} />
             <Redirect to='/' />

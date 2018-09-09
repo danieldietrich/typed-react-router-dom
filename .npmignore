@@ -1,3 +1,4 @@
+# we don't ingnore /dist but /lib !
 /.vscode
 /examples
 /lib
