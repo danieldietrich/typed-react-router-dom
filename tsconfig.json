@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
-        "alwaysStrict": true,
         "allowSyntheticDefaultImports": true,
+        "alwaysStrict": true,
         "declaration": true,
         "declarationDir": "dist/@types",
         "forceConsistentCasingInFileNames": true,
@@ -10,17 +10,15 @@
             "es2018",
             "dom"
         ],
-        "module": "es6",
+        "module": "ESNext",
         "moduleResolution": "node",
         "noImplicitAny": true,
         "noImplicitReturns": true,
         "noImplicitThis": true,
         "noUnusedLocals": true,
-        "noUnusedParameters": false,
-        "removeComments": true,
-        "sourceMap": false,
+        "outDir": "dist/",
         "strict": true,
-        "target": "es6"
+        "target": "ESNext"
     },
     "include": [
         "lib/**/*"

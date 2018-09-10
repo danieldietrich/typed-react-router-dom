@@ -1,20 +1,24 @@
 {
     "compilerOptions": {
         "allowSyntheticDefaultImports": true,
+        "alwaysStrict": true,
         "declaration": true,
-        "declarationDir": "@types",
+        "declarationDir": "dist/@types",
         "forceConsistentCasingInFileNames": true,
         "jsx": "react",
-        "lib": ["es2017", "dom"],
+        "lib": [
+            "es2018",
+            "dom"
+        ],
         "module": "ESNext",
         "moduleResolution": "node",
         "noImplicitAny": true,
         "noImplicitReturns": true,
+        "noImplicitThis": true,
         "noUnusedLocals": true,
-        "removeComments": true,
-        "sourceMap": true,
+        "outDir": "dist/",
         "strict": true,
-        "target": "es6"
+        "target": "ESNext"
     },
     "include": [
         "src/**/*"

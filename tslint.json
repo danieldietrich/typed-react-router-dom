@@ -10,7 +10,6 @@
         "no-submodule-imports": false,
         "no-empty": false,
         "no-any": true,
-        "no-null-keyword": true,
         "object-literal-sort-keys": false,
         "ordered-imports": false,
         "trailing-comma": [ true, { "multiline": "never", "singleline": "never" } ]

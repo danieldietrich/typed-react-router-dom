@@ -7,7 +7,7 @@
   "types": "dist/@types/index.d.ts",
   "scripts": {
     "clean": "git clean -fdX",
-    "prepublishOnly": "npm run clean && npm install && npm run lint && webpack --mode production --progress --colors",
+    "prepublishOnly": "npm run clean && npm install && npm run lint && tsc",
     "publish": "echo \"Error: no publish allowed\" && exit 1",
     "lint": "tslint --project tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,14 +25,10 @@
   "devDependencies": {
     "@types/react": "^16.4.13",
     "@types/react-router-dom": "^4.3.0",
-    "peer-deps-externals-webpack-plugin": "^1.0.4",
     "react": "^16.5.0",
     "react-router-dom": "^4.3.1",
-    "ts-loader": "^5.0.0",
     "tslint": "^5.11.0",
-    "typescript": "^3.0.3",
-    "webpack": "^4.17.2",
-    "webpack-cli": "^3.1.0"
+    "typescript": "^3.0.3"
   },
   "peerDependencies": {
     "react": ">=15",
